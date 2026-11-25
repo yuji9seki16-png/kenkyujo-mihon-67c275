@@ -55,6 +55,19 @@ tr.done td{background:#f2f2f2;color:var(--soft);font-weight:400}
 .kpc-grid img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border:1px solid var(--line)}
 .kpc-grid figcaption{font-size:11px;color:var(--soft);margin-top:4px}
 @media(max-width:720px){.works{grid-template-columns:1fr}.kpc-grid{gap:4px}.kpc-grid figcaption{font-size:10px}}
+
+/* ===== 2026-11-26 カモシカのトーンへ（中のページ）｜この塊を外せば前の見た目に戻る。赤は「異常」の意味なので残す ===== */
+body{background:#FFFDF6 !important;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif !important}
+button,input,select,textarea{font-family:inherit !important}
+.top{background:#FF831D !important;color:#fff !important;border-bottom:0 !important}
+.top a,.top span{color:#fff !important}
+h1{width:fit-content;max-width:100%;background:linear-gradient(transparent 64%,#FFE311 64%);padding:0 .15em}
+.sheet,.panel,.card,.item,.tbl,.step,.memo,form.mini,.story{border-radius:18px !important;border:2px solid #F7DDC5 !important;background:#fff}
+.sheet,.panel{box-shadow:5px 5px 0 #FFE311}
+button,.btn,.btn-send{border-radius:999px !important;border:2px solid #FF831D !important}
+button:hover,.btn:hover,.btn-send:hover{background:#FFF4DC !important}
+button.primary,button.active{background:#FF831D !important;color:#fff !important}
+th{background:#FFF4DC !important}
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' file:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"></head><body><div class="top">カモシカで動いている仕組み<a href="../index.html#seed-03" onclick="try { if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; } } catch (error) {}">← 戻る</a></div><main>
 <p class="label">03 コンテンツ生成 ｜ カモシカで動いている仕組み</p>
 <h1>コンテンツづくり ― ばらばらの発信をつなぐ</h1>

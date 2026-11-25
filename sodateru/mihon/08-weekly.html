@@ -21,6 +21,19 @@ p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;ma
 p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
 p.gensen-empty{color:#999;font-weight:400}
 p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+
+/* ===== 2026-11-26 カモシカのトーンへ（中のページ）｜この塊を外せば前の見た目に戻る。赤は「異常」の意味なので残す ===== */
+body{background:#FFFDF6 !important;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif !important}
+button,input,select,textarea{font-family:inherit !important}
+.top{background:#FF831D !important;color:#fff !important;border-bottom:0 !important}
+.top a,.top span{color:#fff !important}
+h1{width:fit-content;max-width:100%;background:linear-gradient(transparent 64%,#FFE311 64%);padding:0 .15em}
+.sheet,.panel,.card,.item,.tbl,.step,.memo,form.mini,.story{border-radius:18px !important;border:2px solid #F7DDC5 !important;background:#fff}
+.sheet,.panel{box-shadow:5px 5px 0 #FFE311}
+button,.btn,.btn-send{border-radius:999px !important;border:2px solid #FF831D !important}
+button:hover,.btn:hover,.btn-send:hover{background:#FFF4DC !important}
+button.primary,button.active{background:#FF831D !important;color:#fff !important}
+th{background:#FFF4DC !important}
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"></head><body><div class="wrap"><div class="top"><a href="../tane/08-weekly.html">← 種のページへ</a><span class="tag">見本・架空のデータです</span></div><header class="mast"><div class="title"><h1>日報から週次資料</h1></div><p class="real-link"><a href="../kamoshika/zentaikai.html"><span aria-hidden="true">▸</span> カモシカの実物を見る →</a></p><p class="lead">毎日の日報が、週の振り返りの材料になる</p></header><main><div class="intro"><span>燻製料理の食堂・工房・燻製マルシェ・卸・燻製ワークショップ（日英）・オンライン燻製教室。</span></div><div class="grid"><section class="panel"><h2>6部門の日報｜11月16〜21日</h2><div id="diaries"></div></section><section class="panel"><div class="row"><h2>全体会の1枚</h2><button class="primary" id="summarize">週の資料にする</button></div><p class="muted">6部門の記録から「判断・確認・共有」の候補を並べます。最終テーマは人が決めます。</p><div id="weekly" aria-live="polite"><div class="empty">ボタンを押すと週の資料が開きます。</div></div></section></div></main><footer class="footer"><nav aria-label="ほかの見本"><a href="07-backup.html">← 前の見本</a><span>11 / 11</span><a href="01-cross.html">次の見本 →</a></nav>燻製食堂クワガタは架空のお店です。人名・数値・記録はすべて見本用です。<br>操作はこの画面だけに反映されます。再読み込みすると元に戻ります。</footer></div><script>
 'use strict';const $=s=>document.querySelector(s);
 const diaries=[['11/16','レストラン','調理A','土曜の13時に燻製サバ定食が8食不足。予約分と当日分を何食ずつ確保するか決めたい。','decide'],['11/17','工房','製造C','製造12回のうち2回で温度記録の終了欄が空欄。原本と担当者の記録を照合したい。','check'],['11/18','燻製マルシェ','販売D','チーズ小袋の実数24袋、帳面30袋。試食に使った6袋の記入欄を足したい。','decide'],['11/19','卸','出荷A','ギフト受注10店のうち3店で出荷日が未回答。確認の担当と回答期限を決めたい。','decide'],['11/20','燻製ワークショップ','講師E','日本語回は準備表で6組を照合できた。英語回のチップ6種の説明カードは未完成。','check'],['11/21','オンライン燻製教室','配信B','第1回の日本語・英語・繁體中文字幕を照合。チップ2種の表記を対訳表に登録した。','share']];

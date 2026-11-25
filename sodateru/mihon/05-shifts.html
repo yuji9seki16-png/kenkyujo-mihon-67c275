@@ -21,6 +21,19 @@ p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;ma
 p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
 p.gensen-empty{color:#999;font-weight:400}
 p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+
+/* ===== 2026-11-26 カモシカのトーンへ（中のページ）｜この塊を外せば前の見た目に戻る。赤は「異常」の意味なので残す ===== */
+body{background:#FFFDF6 !important;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif !important}
+button,input,select,textarea{font-family:inherit !important}
+.top{background:#FF831D !important;color:#fff !important;border-bottom:0 !important}
+.top a,.top span{color:#fff !important}
+h1{width:fit-content;max-width:100%;background:linear-gradient(transparent 64%,#FFE311 64%);padding:0 .15em}
+.sheet,.panel,.card,.item,.tbl,.step,.memo,form.mini,.story{border-radius:18px !important;border:2px solid #F7DDC5 !important;background:#fff}
+.sheet,.panel{box-shadow:5px 5px 0 #FFE311}
+button,.btn,.btn-send{border-radius:999px !important;border:2px solid #FF831D !important}
+button:hover,.btn:hover,.btn-send:hover{background:#FFF4DC !important}
+button.primary,button.active{background:#FF831D !important;color:#fff !important}
+th{background:#FFF4DC !important}
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"></head><body><div class="wrap"><div class="top"><a href="../tane/05-shifts.html">← 種のページへ</a><span class="tag">見本・架空のデータです</span></div><header class="mast"><div class="title"><h1>シフト表</h1></div><p class="real-link"><a href="../kamoshika/shift-input.html"><span aria-hidden="true">▸</span> カモシカの実物を見る →</a></p></header><main><div class="intro"><span>燻製料理の食堂・工房・燻製マルシェ・卸・燻製ワークショップ（日英）・オンライン燻製教室。</span></div><section class="panel"><div class="row"><h2>食堂・工房・マルシェ・講座の1週間</h2><span class="pill" id="shiftTotal" aria-live="polite"></span></div><p class="muted">担当の枠を選んで配置します。同じ日に同じ人を重ねることはできません。日曜は定休日です。</p></section><div class="week" id="week" style="margin-top:20px"></div><p class="muted">火曜の配置例：調理Aの11〜15時、製造Cの9〜16時、販売Dの10〜18時の勤務希望が各枠と合うため、食堂・工房・マルシェに1人ずつ配置しています。</p><p id="shiftNotice" class="status" role="status"></p><div class="note">同じ時間に重なる枠なので、同じ日に1人を二重配置できません。資格・技能の判定はせず、最終配置は人が確認します。</div></main><footer class="footer"><nav aria-label="ほかの見本"><a href="05-followup.html">← 前の見本</a><span>7 / 11</span><a href="06-issues.html">次の見本 →</a></nav>燻製食堂クワガタは架空のお店です。人名・数値・記録はすべて見本用です。<br>操作はこの画面だけに反映されます。再読み込みすると元に戻ります。</footer></div><script>
 'use strict';const $=s=>document.querySelector(s);
 const staff=['調理A','接客B','製造C','販売D','講師E','補助F'];

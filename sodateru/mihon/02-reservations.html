@@ -21,6 +21,19 @@ p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;ma
 p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
 p.gensen-empty{color:#999;font-weight:400}
 p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+
+/* ===== 2026-11-26 カモシカのトーンへ（中のページ）｜この塊を外せば前の見た目に戻る。赤は「異常」の意味なので残す ===== */
+body{background:#FFFDF6 !important;font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif !important}
+button,input,select,textarea{font-family:inherit !important}
+.top{background:#FF831D !important;color:#fff !important;border-bottom:0 !important}
+.top a,.top span{color:#fff !important}
+h1{width:fit-content;max-width:100%;background:linear-gradient(transparent 64%,#FFE311 64%);padding:0 .15em}
+.sheet,.panel,.card,.item,.tbl,.step,.memo,form.mini,.story{border-radius:18px !important;border:2px solid #F7DDC5 !important;background:#fff}
+.sheet,.panel{box-shadow:5px 5px 0 #FFE311}
+button,.btn,.btn-send{border-radius:999px !important;border:2px solid #FF831D !important}
+button:hover,.btn:hover,.btn-send:hover{background:#FFF4DC !important}
+button.primary,button.active{background:#FF831D !important;color:#fff !important}
+th{background:#FFF4DC !important}
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"></head><body><div class="wrap"><div class="top"><a href="../tane/02-reservations.html">← 種のページへ</a><span class="tag">見本・架空のデータです</span></div><header class="mast"><div class="title"><h1>予約管理表</h1></div><p class="real-link"><a href="../kamoshika/reservation.html"><span aria-hidden="true">▸</span> カモシカの実物を見る →</a></p><p class="lead">予約の受け漏れ・重なりを防ぐ</p></header><main><div class="intro"><span>燻製料理の食堂・工房・燻製マルシェ・卸・燻製ワークショップ（日英）・オンライン燻製教室。</span></div><div class="tabs" id="dates"></div><div class="grid"><section class="panel"><h2 id="dateTitle"></h2><p class="muted">食堂は各回12席、ワークショップは各回6名。枠ごとに空きを確認します。</p><div id="slots"></div></section><section class="panel"><h2>予約を受ける</h2><label>予約枠 <select id="time"></select></label><label> 人数 <select id="party"><option value="1">1名</option><option value="2" selected>2名</option><option value="3">3名</option></select></label><p><button class="primary" id="book">予約を入れる</button></p><p id="notice" class="status" role="status"></p><div class="note">HP・電話で受けた予約を同じ一覧へ。実際の予約・送信はしません。</div></section></div><section class="panel"><h2>予約一覧・当日の台帳</h2><div class="table-scroll" tabindex="0" role="region" aria-label="予約一覧。横にスクロールできます"><table><thead><tr><th>日付</th><th>枠</th><th>人数</th><th>お客様</th><th>受付</th><th>担当</th><th>メモ</th></tr></thead><tbody id="reservationRows"></tbody></table></div></section></main><footer class="footer"><nav aria-label="ほかの見本"><a href="01-cross.html">← 前の見本</a><span>2 / 11</span><a href="03-video.html">次の見本 →</a></nav>燻製食堂クワガタは架空のお店です。人名・数値・記録はすべて見本用です。<br>操作はこの画面だけに反映されます。再読み込みすると元に戻ります。</footer></div><script>
 'use strict';
 const $=s=>document.querySelector(s);
