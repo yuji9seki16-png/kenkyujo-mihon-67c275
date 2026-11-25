@@ -1,0 +1,128 @@
+<!doctype html><html lang="ja"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>予約管理（見本）｜カモシカ</title><style>:root{--navy:#333;--sumi:#333;--soft:#666;--line:#ccc;--bg:#fff;--or:#c00000}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--sumi);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:14px;line-height:1.7}
+.top{background:#fff;color:#333;font-size:12px;padding:8px 16px;text-align:center}.top a{color:#333;margin:0 8px}
+main{max-width:1040px;margin:0 auto;padding:24px 16px 48px}h1{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:clamp(22px,3.4vw,30px);margin:4px 0}
+.lead{color:var(--soft);margin:0 0 18px}.label{font-size:12px;letter-spacing:normal;color:var(--navy)}
+.flow{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:10px;margin:8px 0 24px}
+.step{background:#fff;border:1px solid var(--navy);border-radius:0;padding:12px;position:relative}
+.step b{display:block;color:var(--navy);font-size:15px}.step small{color:var(--soft);font-size:12px;display:block}
+.step .who{display:inline-block;font-size:11px;background:#fff;color:var(--navy);border-radius:0;padding:1px 8px;margin-bottom:4px}
+.step.auto{background:#fff}.step.on{box-shadow:none}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:42%;color:var(--navy);font-weight:700;background:#fff}
+h2{font-size:15px;border-left:0;padding-left:8px;margin:26px 0 10px}
+.tbl{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:0}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:center;white-space:nowrap}
+th{background:#fff;color:var(--navy)}tr.new td{background:#fff}td.l{text-align:left}
+.note{font-size:12px;color:var(--soft)}.btn{background:#fff;color:#333;border:0;border-radius:0;padding:10px 16px;font-size:14px;cursor:pointer}
+.warn{color:#c00000;font-weight:700}.ok{color:#333;font-weight:700}
+form.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;background:#fff;border:1px solid var(--line);border-radius:0;padding:12px;align-items:end}
+form.mini label{font-size:12px;color:var(--soft)}form.mini input,form.mini select{width:100%;padding:6px;font-size:14px}
+@media(max-width:720px){.flow{grid-template-columns:1fr}.step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px}}
+
+/* 白地と線で区切る。操作状態は文字・枠線で示す。 */
+button,input,select,textarea{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif}
+button,.btn,.btn-send{border:1px solid #333;color:#333;background:#fff}
+button:hover,.btn:hover,.btn-send:hover{border-color:#c00000}
+button.active,button.primary,.check[aria-pressed=true] .box{color:#c00000;font-weight:700;border-color:#c00000;background:#fff}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #c00000;outline-offset:3px}
+.panel,.card,.sheet{border:0;border-top:1px solid #ccc}
+.note{border:0;border-top:1px solid #ccc;padding:12px 0;background:#fff}
+.top,header{border-bottom:1px solid #ccc}
+tr.new td{color:#c00000;font-weight:700}
+.step.on,.item.done{border:1px solid #c00000}
+.seat.filled::after{content:"●";display:block;text-align:center;color:#c00000}
+.progress>div{background:#fff;border-top:1px solid #c00000}
+.caption{color:#333;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.good,.ok,.green{color:#333}.warn,.red{color:#c00000}
+
+p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;margin:10px 0 14px;padding:0;color:#FF831D;font:700 15px/1.8 "Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;letter-spacing:normal;text-align:left;opacity:1;white-space:normal;overflow-wrap:anywhere}
+p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
+p.gensen-empty{color:#999;font-weight:400}
+p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+tr.done td{background:#f2f2f2;color:var(--soft);font-weight:400}
+.completion{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.demo-count{font-size:12px;color:var(--soft)}
+</style><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"></head><body><div class="top">見本です（名前はすべて架空）<a href="../源泉と8つの種_デモ.html" onclick="try { if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; } } catch (error) {}">← 戻る</a></div><main>
+<p class="label">02 顧客 ｜ カモシカで動いている仕組み</p><h1>予約管理表 ― 届いた予約を「済み」まで確認</h1><p class="gensen-bridge" style="margin:0 0 14px;color:#333;font:400 14px/1.8 'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif">貴重な１つの予約を大切に必ず受け取る為に</p>
+<p class="lead">以前は、繁忙期に予約メールが埋もれ、担当が替わると対応が漏れていました。今は、表を開けば最新の予約が並び、対応したら「済み」にチェック。担当が替わっても、どこまで済んだかが分かります。</p>
+<div class="flow" style="--n:4">
+<div class="step on"><span class="who">お客様</span><b>① 予約フォーム</b><small>ホームページから送る</small></div>
+<div class="step auto"><span class="who">自動・15分ごと</span><b>② 表に1件1行</b><small>メールを読み取り、一番下に足す。同じ予約の再送は1行のまま。付けた完了チェックも残る</small></div>
+<div class="step"><span class="who">スタッフ</span><b>③ 対応して「済み」</b><small>確認の連絡をしたら、完了にチェック</small></div>
+<div class="step auto"><span class="who">自動</span><b>④ 止まったら知らせる</b><small>取り込みが止まると担当者にメール</small></div>
+</div>
+<h2>① 予約フォームから送ってみる（見本）</h2>
+<form class="mini" onsubmit="event.preventDefault();addRes()">
+<div><label>希望日</label><input id="d" value="12/2(水)"></div><div><label>枠</label><select id="w"><option>11:30</option><option>12:00</option><option>13:00</option></select></div>
+<div><label>人数</label><select id="p"><option>2</option><option>1</option><option>3</option><option>4</option></select></div>
+<div><label>お名前</label><input id="n" value="見本 はな"></div><div><button class="btn">予約を送る</button></div></form>
+<p class="note" id="msg" role="status">送ると、下の予約ログの一番下に赤字の行が加わります（見本はすぐに反映、実際は15分ごとに取り込みます）。</p>
+<h2>予約ログ（スプレッドシートの見本）</h2>
+<p class="demo-count" id="pending" role="status"></p>
+<div class="tbl"><table id="list" aria-label="予約ログ（スプレッドシートの見本）"></table></div>
+<p>担当が替わっても、チェックのない行だけ見ればよい。</p>
+<p class="note">前の月の予約は、毎月1日に年ごとのシートへ移ります。</p>
+</main><script>
+const reservations = [
+ {date:"12/2(水)",slot:"11:30",people:"2",name:"山田 花子",remarks:"ぬか漬け苦手",done:true,received:"11/25 09:15"},
+ {date:"12/2(水)",slot:"12:00",people:"4",name:"佐藤 一郎",remarks:"子ども1名",done:false,received:"11/25 09:30"},
+ {date:"12/2(水)",slot:"13:00",people:"1",name:"鈴木 美咲",remarks:"",done:true,received:"11/25 10:00"},
+ {date:"12/3(木)",slot:"11:30",people:"3",name:"田中 健",remarks:"誕生日",done:false,received:"11/25 10:15"},
+ {date:"12/3(木)",slot:"12:00",people:"2",name:"高橋 葵",remarks:"",done:true,received:"11/25 10:30"},
+ {date:"12/3(木)",slot:"13:00",people:"2",name:"伊藤 悠",remarks:"",done:false,received:"11/25 10:45"}
+];
+function updatePending() {
+ document.getElementById("pending").textContent = `見本の表示：まだのもの：${reservations.filter(r => !r.done).length}件（実物にはこの数字の欄はありません）`;
+}
+function render() {
+ const table = document.getElementById("list");
+ table.replaceChildren();
+ const head = table.createTHead().insertRow();
+ ["希望日付","枠","人数","名前","電話","備考","完了","受信日時","ルート"].forEach(title => {
+  const th = document.createElement("th");
+  th.scope = "col";
+  th.textContent = title;
+  head.append(th);
+ });
+ const body = table.createTBody();
+ reservations.forEach(r => {
+  const row = body.insertRow();
+  row.classList.toggle("new", Boolean(r.isNew));
+  row.classList.toggle("done", r.done);
+  [r.date,r.slot,r.people,r.name,"番号非掲載",r.remarks,null,r.received,"HP"].forEach((value, column) => {
+   const cell = row.insertCell();
+   if (column === 3 || column === 5) cell.className = "l";
+   if (column !== 6) {
+    cell.textContent = value;
+    return;
+   }
+   const label = document.createElement("label");
+   label.className = "completion";
+   const checkbox = document.createElement("input");
+   checkbox.type = "checkbox";
+   checkbox.checked = r.done;
+   checkbox.setAttribute("aria-label", `${r.date} ${r.slot} ${r.name}の完了`);
+   const status = document.createElement("span");
+   status.textContent = r.done ? "済み" : "未対応";
+   checkbox.addEventListener("change", () => {
+    r.done = checkbox.checked;
+    row.classList.toggle("done", r.done);
+    status.textContent = r.done ? "済み" : "未対応";
+    updatePending();
+   });
+   label.append(checkbox, status);
+   cell.append(label);
+  });
+ });
+ updatePending();
+}
+function addRes() {
+ const now = new Date();
+ const received = `${now.getMonth()+1}/${now.getDate()} ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
+ reservations.push({date:document.getElementById("d").value,slot:document.getElementById("w").value,people:document.getElementById("p").value,name:document.getElementById("n").value,remarks:"",done:false,received,isNew:true});
+ render();
+ document.getElementById("msg").textContent = "届きました。予約ログの一番下に、未対応の予約が赤字で加わりました（見本）。";
+}
+render();
+</script></body></html>

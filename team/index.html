@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>心のカルテと森のカルテ｜ぬか床的経営研究所</title><style>
+:root{--kinari:#FFFFFF;--kinari-2:#F7F7F7;--sumi:#333333;--sumi-soft:#666666;--tsuchi:#194785;--line:#E0E0E0;--orange:#FF831D}
+*{box-sizing:border-box}html{scroll-padding-top:24px}body{margin:0;background:var(--kinari);color:var(--sumi);font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:16px;line-height:1.9;overflow-wrap:anywhere}a{color:inherit;text-underline-offset:5px;touch-action:manipulation}a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--tsuchi);outline-offset:5px}h1,h2,h3,h4,p,figure,ol,ul,dl,dd{margin:0}h1,h2,h3,.epithet{font-family:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700}h1{font-size:clamp(28px,6.6vw,38px);line-height:1.65}h2{font-size:clamp(23px,4.5vw,30px);line-height:1.65}h3{font-size:20px;line-height:1.7}h4{font-size:15px;line-height:1.8}p+p{margin-top:1.4em}.wrap{width:calc(100% - 40px);max-width:1080px;margin-inline:auto}.header{border-bottom:1px solid var(--line);padding-block:24px}.brand{font-family:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:19px;letter-spacing:.04em;text-decoration:none}.breadcrumb{font-size:12px;color:var(--sumi-soft);padding-top:28px;line-height:2}.hero{padding:54px 0 60px}.sample{margin-bottom:80px}.one-line{font-size:14px;color:var(--sumi-soft);margin-bottom:18px}.personal-sheet,.forest-sheet{border:1px solid var(--line);padding:26px 20px}.sheet-head{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:28px}.sheet-head h2::before{content:"";display:inline-block;width:6px;height:6px;background:var(--orange);vertical-align:middle;margin-right:12px}.epithet{font-size:clamp(20px,3.4vw,26px);line-height:1.75;margin-top:22px}.portrait-copy{font-size:15px;margin-top:16px;max-width:850px}.personal-grid{display:grid;gap:32px}.strengths ol{padding:0;list-style:none;counter-reset:strength}.strengths li{counter-increment:strength;border-top:1px solid var(--line);padding-top:16px;margin-top:18px}.strengths h4::before{content:counter(strength,decimal-leading-zero);font-size:12px;color:var(--tsuchi);margin-right:12px}.strengths p,.traits p,.traits dl{font-size:14px;line-height:1.95}.strengths p{margin-top:8px}.traits section+section{margin-top:28px;border-top:1px solid var(--line);padding-top:24px}.traits h3{font-size:17px;margin-bottom:16px}.traits h3 small{display:block;font:12px/1.8 "Hiragino Kaku Gothic ProN",sans-serif;color:var(--sumi-soft)}dt{font-size:13px;font-weight:700;margin-top:22px}dd{margin-top:6px}.shop{font-size:18px;font-weight:700;margin-top:18px}.shop span{display:block;font-size:12px;font-weight:400;color:var(--sumi-soft);margin-top:5px}.forest-block+.forest-block{border-top:1px solid var(--line);margin-top:36px;padding-top:28px}.section-no{font:12px/1.8 "Hiragino Kaku Gothic ProN",sans-serif;color:var(--tsuchi);vertical-align:middle;margin-right:12px}.map-scroll{overflow-x:auto}.forest-map{display:block;min-width:640px;width:100%;height:auto;max-width:850px;margin:22px auto 0}.map-axis{font-size:14px;fill:var(--sumi-soft)}.map-name{font-size:18px;fill:var(--sumi);font-weight:700}.map-role{font-size:14px;fill:var(--sumi-soft)}.kitchen-flow{list-style:none;display:grid;gap:16px;margin-top:24px;padding:0}.kitchen-flow li{border-left:1px solid var(--line);padding-left:18px}.kitchen-flow b,.kitchen-flow span{display:block;font-size:14px}.kitchen-flow span{font-size:13px;color:var(--sumi-soft);margin-top:6px}.pair-grid{display:grid;gap:24px;margin-top:22px}.pair-grid p,.plain-notes{font-size:14px}.pair-grid p{margin-top:8px}.table-scroll{overflow-x:auto;margin-top:20px}table{width:100%;min-width:720px;border-collapse:collapse;table-layout:fixed;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:16px 12px;text-align:left;vertical-align:top}thead{background:var(--kinari-2);font-size:13px}th:first-child{width:18%}th:nth-child(2){width:32%}th:nth-child(3){width:17%}th:nth-child(4){width:33%}tbody th{font-size:16px}tbody th span{display:block;font-size:12px;font-weight:400;color:var(--sumi-soft);margin-top:6px}.plain-notes{padding-left:1.3em;margin-top:22px}.plain-notes li+li{margin-top:16px}.back{padding:0 0 72px;font-size:14px}
+@media(min-width:760px){.wrap{width:calc(100% - 80px)}.brand{font-size:20px}.hero{padding-top:88px;padding-bottom:80px}.sample{margin-bottom:100px}.personal-sheet,.forest-sheet{padding:40px}.personal-grid{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:36px}.traits{border-left:1px solid var(--line);padding-left:28px}.kitchen-flow{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}.pair-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.forest-block+.forest-block{margin-top:40px;padding-top:32px}}
+
+/* 元資料の図と色の対応を保ち、ページの白地・細い罫線に合わせる。 */
+.forest-sheet{font-size:15px;line-height:1.9}
+.forest-page+.forest-page{margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.forest-page>header{display:flex;gap:20px;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:24px}
+.forest-page .meta{font-size:12px;color:var(--sumi-soft);text-align:right;flex-shrink:0}
+.forest-page .lead{margin-top:22px;font-size:15px}
+.forest-page h3{font-size:20px;line-height:1.7;margin:32px 0 18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+.forest-page h3 .no{font:12px/1.8 "Hiragino Kaku Gothic ProN",sans-serif;color:var(--tsuchi)}
+.forest-page h3 .hint{font:12px/1.8 "Hiragino Kaku Gothic ProN",sans-serif;color:var(--sumi-soft);margin-left:auto}
+.forest-page h4{font-size:17px;line-height:1.8;font-family:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif}
+.forest-page .fig{overflow-x:auto;margin-top:20px}.forest-page .fig svg{display:block;width:100%;min-width:720px;height:auto}
+.forest-page .axis{font-size:13px;margin-top:18px;color:var(--sumi-soft)}.forest-page .axis p+p{margin-top:8px}.forest-page .axis b{margin-right:12px;color:var(--tsuchi)}.forest-page .axs{font-size:12px}
+.forest-page .flow{display:flex;align-items:stretch;gap:8px}.forest-page .fl{flex:1;min-width:0;border-top:3px solid var(--c);padding:12px 0;display:flex;flex-direction:column;gap:8px}.forest-page .fl b{font-size:16px;color:var(--c)}.forest-page .fl small{font-size:13px;color:var(--sumi-soft);flex:1}.forest-page .fl span{font-size:15px;font-weight:700}.forest-page .arw{align-self:center;font-size:14px;color:var(--sumi-soft)}.forest-page .loop{font-size:12px;color:var(--sumi-soft);margin-top:14px}
+.forest-page .checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.forest-page .ck{border-top:1px solid var(--line);padding-top:16px}.forest-page .ck>b{font-size:15px;display:block}.forest-page .ck p{font-size:14px;margin-top:10px}
+.forest-table-scroll{overflow-x:auto}.forest-page table{font-size:14px;line-height:1.9;min-width:820px;table-layout:fixed}.forest-page th{font-size:13px;font-weight:700;color:var(--sumi-soft)}.forest-page th:first-child{width:29%}.forest-page th:nth-child(2){width:25%}.forest-page th:nth-child(3){width:20%}.forest-page th:nth-child(4){width:26%}.forest-page th,.forest-page td{padding:18px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.forest-page .who{border-left:3px solid var(--c)}.forest-page .who b{font-size:17px}.forest-page .tag{display:inline-block;font-size:11px;color:var(--c);margin-left:12px}.forest-page .who i{display:block;font-size:13px;line-height:1.8;font-style:normal;color:var(--sumi-soft);margin-top:8px}
+.forest-page .notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.forest-page .nt3{border-left:1px solid var(--line);padding-left:18px}.forest-page .nt3>b{display:block;font-size:15px}.forest-page .nt3 p{font-size:14px;margin-top:8px}
+.forest-page .steps{list-style:none;counter-reset:step;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;padding:0}.forest-page .steps li{counter-increment:step;border-top:1px solid var(--line);padding-top:14px;font-size:13px}.forest-page .steps li::before{content:counter(step);display:block;font-size:20px;color:var(--tsuchi);margin-bottom:8px}.forest-page .steps b{display:block;font-size:14px;margin-bottom:8px}
+.forest-page .two3{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}.forest-page .heavy,.forest-page .case{border-top:1px solid var(--line);padding-top:18px}.forest-page .src{font-size:12px;color:var(--sumi-soft);margin-top:8px}.forest-page dt{font-size:14px;margin-top:18px}.forest-page dd{font-size:14px;margin-top:6px}.forest-page .case ul{list-style:none;padding:0;margin-top:18px}.forest-page .case li{font-size:14px;display:grid;grid-template-columns:6em minmax(0,1fr);margin-top:16px}.forest-page .case li b{color:var(--tsuchi)}
+.forest-page footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:32px;padding-top:16px;font-size:12px;color:var(--sumi-soft)}
+@media(max-width:759px){.forest-page>header{display:block}.forest-page .meta{text-align:left;margin-top:12px}.forest-page h3 .hint{display:block;flex-basis:100%;margin-left:0}.forest-page .flow{flex-direction:column;gap:0}.forest-page .fl{padding:14px 0;gap:4px}.forest-page .arw{transform:rotate(90deg)}.forest-page .checks,.forest-page .notes,.forest-page .steps,.forest-page .two3{grid-template-columns:1fr}.forest-page .steps{gap:24px}.forest-page .two3{gap:32px}.forest-page .case li{grid-template-columns:1fr;gap:6px}.forest-page footer{flex-direction:column;gap:6px}}
+
+.karte-image{display:block;width:100%;height:auto}.karte-caption{font-size:14px;color:var(--sumi-soft);margin-top:14px}
+
+/* 掲載確認表と追加事例。森のカルテの指定には影響させない。 */
+.confirmation-table{table-layout:fixed;min-width:800px;font-size:13px}
+.confirmation-table th:first-child{width:6%}.confirmation-table th:nth-child(2){width:20%}.confirmation-table th:nth-child(3){width:18%}.confirmation-table th:nth-child(4){width:46%}.confirmation-table th:nth-child(5){width:10%}
+.confirmation-table tbody th{font-size:14px;font-weight:400}.confirmation-table th,.confirmation-table td{padding:12px 10px}
+.confirmation-table td:last-child{white-space:nowrap}
+.confirmation-note{font-size:14px;color:var(--sumi-soft);margin-top:14px}
+.confirmation-links{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:14px;margin-top:18px}
+.confirmation-links a{display:inline-block;min-height:44px;padding-block:8px}
+.personal-sheet>.sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.confirmation-status{display:inline-block;border:1px solid #BDBDBD;background:transparent;color:var(--sumi-soft);font-size:12px;font-weight:400;line-height:1.8;padding:3px 9px;white-space:nowrap;margin-left:auto}
+.case-group{margin-bottom:80px}.case-group>h2{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:32px}
+.case-card+.case-card{margin-top:40px}.case-card .sheet-head{padding-bottom:18px;margin-bottom:24px}
+.case-card h3{font-size:20px}.case-card h3::before{content:"";display:inline-block;width:6px;height:6px;background:var(--orange);vertical-align:middle;margin-right:12px}
+.case-source{display:block;font-size:12px;color:var(--sumi-soft);margin-top:8px}
+.back-to-confirmation{font-size:13px;margin-top:28px}
+@media(min-width:760px){.case-group{margin-bottom:100px}}
+</style></head><body>
+<header class="header"><div class="wrap"><a class="brand" href="../index.html">ぬか床的経営研究所</a></div></header>
+<main class="wrap"><nav class="breadcrumb" aria-label="パンくず"><a href="../index.html#team">研究所</a> › カルテの実物</nav><div class="hero"><h1>心のカルテと森のカルテ</h1></div>
+<section class="sample" id="confirmation" aria-labelledby="confirmation-title">
+<h2 id="confirmation-title">掲載の確認表</h2>
+<p class="confirmation-note">本人に会ったときの掲載確認用です。掲載確認はすべて「まだ」から始めています。</p>
+<nav class="confirmation-links" aria-label="事例のまとまり"><a href="#staff">カモシカスタッフ</a><a href="#friends">友人・知人</a><a href="#organizations">企業・団体（トライアル含む）</a><a href="#students">学生版</a></nav>
+<div class="table-scroll" role="region" aria-label="掲載の確認表（横にスクロールできます）" tabindex="0">
+<table class="confirmation-table"><thead><tr><th scope="col">#</th><th scope="col">名前</th><th scope="col">まとまり</th><th scope="col">材料ファイル名</th><th scope="col">掲載確認</th></tr></thead><tbody>
+<tr><td>1</td><th scope="row"><a href="#yusuke">関雄介</a></th><td>カモシカスタッフ</td><td>心のカルテ_関 雄介_20260512_v3.pptx（スライド1・発酵タイプ版）</td><td>まだ</td></tr>
+<tr><td>2</td><th scope="row"><a href="#megumi">関恵</a></th><td>カモシカスタッフ</td><td>心のカルテ_20260419.pptx（スライド1・発酵タイプ版）</td><td>まだ</td></tr>
+<tr><td>3</td><th scope="row"><a href="#case-103">関◯</a></th><td>学生版</td><td>心のカルテ — 関◯（2026年7月12日）.pdf（ページ3）</td><td>まだ</td></tr>
+<tr><td>4</td><th scope="row"><a href="#kyodoko-01">福◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド1）</td><td>まだ</td></tr>
+<tr><td>5</td><th scope="row"><a href="#kyodoko-02">高◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド2）</td><td>まだ</td></tr>
+<tr><td>6</td><th scope="row"><a href="#kyodoko-03">児◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド3）</td><td>まだ</td></tr>
+<tr><td>7</td><th scope="row"><a href="#kyodoko-04">荒◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド4）</td><td>まだ</td></tr>
+<tr><td>8</td><th scope="row"><a href="#kyodoko-05">矢◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド5）</td><td>まだ</td></tr>
+<tr><td>9</td><th scope="row"><a href="#kyodoko-06">み◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド6）</td><td>まだ</td></tr>
+<tr><td>10</td><th scope="row"><a href="#kyodoko-07">さ◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド7）</td><td>まだ</td></tr>
+<tr><td>11</td><th scope="row"><a href="#kyodoko-08">り◯</a></th><td>きょうどこ？ラボ</td><td>心のカルテ_きょうどこラボ_9名_20260715.pptx（スライド8）</td><td>まだ</td></tr>
+</tbody></table></div></section>
+<section class="sample" id="yusuke" aria-labelledby="yusuke-title">
+<article class="personal-sheet"><header class="sheet-head"><h2 id="yusuke-title">心のカルテ：関雄介</h2><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_seki_yusuke.png" target="_blank" rel="noopener noreferrer" aria-label="関雄介の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_seki_yusuke.png" alt="関雄介の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_seki_yusuke.png" target="_blank" rel="noopener noreferrer">関雄介の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article></section><section class="sample" id="megumi" aria-labelledby="megumi-title">
+<article class="personal-sheet"><header class="sheet-head"><h2 id="megumi-title">心のカルテ：関恵</h2><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_seki_megumi.png" target="_blank" rel="noopener noreferrer" aria-label="関恵の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_seki_megumi.png" alt="関恵の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_seki_megumi.png" target="_blank" rel="noopener noreferrer">関恵の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article></section>
+<section class="case-group" id="kyodoko" aria-labelledby="kyodoko-title"><h2 id="kyodoko-title">きょうどこ？ラボ</h2>
+<article class="personal-sheet case-card" id="kyodoko-01" aria-labelledby="kyodoko-01-title">
+<header class="sheet-head"><h3 id="kyodoko-01-title">心のカルテ：福◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_01.png" target="_blank" rel="noopener noreferrer" aria-label="福◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_01.png" alt="福◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_01.png" target="_blank" rel="noopener noreferrer">福◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-02" aria-labelledby="kyodoko-02-title">
+<header class="sheet-head"><h3 id="kyodoko-02-title">心のカルテ：高◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_02.png" target="_blank" rel="noopener noreferrer" aria-label="高◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_02.png" alt="高◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_02.png" target="_blank" rel="noopener noreferrer">高◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-03" aria-labelledby="kyodoko-03-title">
+<header class="sheet-head"><h3 id="kyodoko-03-title">心のカルテ：児◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_03.png" target="_blank" rel="noopener noreferrer" aria-label="児◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_03.png" alt="児◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_03.png" target="_blank" rel="noopener noreferrer">児◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-04" aria-labelledby="kyodoko-04-title">
+<header class="sheet-head"><h3 id="kyodoko-04-title">心のカルテ：荒◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_04.png" target="_blank" rel="noopener noreferrer" aria-label="荒◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_04.png" alt="荒◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_04.png" target="_blank" rel="noopener noreferrer">荒◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-05" aria-labelledby="kyodoko-05-title">
+<header class="sheet-head"><h3 id="kyodoko-05-title">心のカルテ：矢◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_05.png" target="_blank" rel="noopener noreferrer" aria-label="矢◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_05.png" alt="矢◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_05.png" target="_blank" rel="noopener noreferrer">矢◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-06" aria-labelledby="kyodoko-06-title">
+<header class="sheet-head"><h3 id="kyodoko-06-title">心のカルテ：み◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_06.png" target="_blank" rel="noopener noreferrer" aria-label="み◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_06.png" alt="み◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_06.png" target="_blank" rel="noopener noreferrer">み◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-07" aria-labelledby="kyodoko-07-title">
+<header class="sheet-head"><h3 id="kyodoko-07-title">心のカルテ：さ◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_07.png" target="_blank" rel="noopener noreferrer" aria-label="さ◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_07.png" alt="さ◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_07.png" target="_blank" rel="noopener noreferrer">さ◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<article class="personal-sheet case-card" id="kyodoko-08" aria-labelledby="kyodoko-08-title">
+<header class="sheet-head"><h3 id="kyodoko-08-title">心のカルテ：り◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_kyodoko_08.png" target="_blank" rel="noopener noreferrer" aria-label="り◯の心のカルテの元画像を開く"><img class="karte-image" src="img/karte_kyodoko_08.png" alt="り◯の心のカルテの元スライド" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_kyodoko_08.png" target="_blank" rel="noopener noreferrer">り◯の心のカルテ（元画像を拡大）</a></figcaption></figure>
+</article>
+<p class="back-to-confirmation"><a href="#confirmation">↑ 掲載の確認表へ</a></p></section>
+<section class="case-group" id="students" aria-labelledby="students-title"><h2 id="students-title">学生版</h2>
+<article class="personal-sheet case-card" id="case-103" aria-labelledby="case-103-title">
+<header class="sheet-head"><h3 id="case-103-title">心のカルテ：関◯</h3><span class="confirmation-status">掲載確認：まだ</span></header>
+<figure><a href="img/karte_103.png" target="_blank" rel="noopener noreferrer" aria-label="関◯のカルテの元画像を開く"><img class="karte-image" src="img/karte_103.png" alt="関◯のカルテの原本、ページ3" width="1131" height="1600" loading="lazy" decoding="async"></a><figcaption class="karte-caption"><a href="img/karte_103.png" target="_blank" rel="noopener noreferrer">関◯のカルテ（元画像を拡大）</a><span class="case-source">心のカルテ — 関◯（2026年7月12日）.pdf ／ ページ3</span></figcaption></figure>
+</article>
+<p class="back-to-confirmation"><a href="#confirmation">↑ 掲載の確認表へ</a></p></section>
+<section class="sample" id="forest" aria-labelledby="forest-title">
+<p class="one-line">実際のチームの森のカルテです（掲載の了解をいただいています）。</p>
+<article class="forest-sheet">
+<section class="forest-page">
+<header>
+  <div><h2 id="forest-title" class="mincho">きょうどこ？ラボの森のカルテ（9名）</h2></div>
+  <div class="meta">2026年7月<br>9人の心のカルテから</div>
+</header>
+<p class="lead">※「もし、きょうどこ？ラボが会社組織だったら？」という仮説的な視点での分析です。</p>
+<h3 class="mincho"><span class="no">01</span>森の地図<span class="hint">色＝下の「森のめぐり」で得意な場面</span></h3>
+<div class="fig" tabindex="0" role="region" aria-label="森の地図（横にスクロールできます）"><svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="forest-map-title forest-map-desc"><title id="forest-map-title">きょうどこ？ラボ、9名の森の地図</title><desc id="forest-map-desc">横は静かな力から動かす力、縦は場を守るから場を変える。9名の位置は元の森のカルテのまま。色は下の森のめぐりに対応します。</desc>
+      <rect x="80" y="50" width="400" height="255" fill="#EEF2FF" opacity="0.4"/>
+      <rect x="480" y="50" width="400" height="255" fill="#FFF7E6" opacity="0.4"/>
+      <rect x="80" y="305" width="400" height="245" fill="#F0F0F0" opacity="0.3"/>
+      <rect x="480" y="305" width="400" height="245" fill="#EDFAF3" opacity="0.3"/>
+      <line x1="480" y1="50" x2="480" y2="550" stroke="#CCCCC0" stroke-width="1" stroke-dasharray="5,4"/>
+      <line x1="80" y1="305" x2="880" y2="305" stroke="#CCCCC0" stroke-width="1" stroke-dasharray="5,4"/>
+      <text x="100" y="76" font-size="13" fill="#A0A096" font-family="'Hiragino Sans',sans-serif">静かに変える</text>
+      <text x="760" y="76" font-size="13" fill="#A0A096" font-family="'Hiragino Sans',sans-serif">動いて変える</text>
+      <text x="100" y="540" font-size="13" fill="#A0A096" font-family="'Hiragino Sans',sans-serif">静かに守る</text>
+      <text x="760" y="540" font-size="13" fill="#A0A096" font-family="'Hiragino Sans',sans-serif">動いて守る</text>
+      <line x1="80" y1="575" x2="880" y2="575" stroke="#BBBBAA" stroke-width="1.5"/>
+      <polygon points="886,575 876,570 876,580" fill="#BBBBAA"/>
+      <text x="480" y="592" text-anchor="middle" font-size="13" fill="#888880" font-family="'Hiragino Sans',sans-serif">静かな力　←──────────────→　動かす力</text>
+      <line x1="55" y1="550" x2="55" y2="50" stroke="#BBBBAA" stroke-width="1.5"/>
+      <polygon points="55,44 50,54 60,54" fill="#BBBBAA"/>
+      <text x="18" y="305" text-anchor="middle" font-size="13" fill="#888880" font-family="'Hiragino Sans',sans-serif" transform="rotate(-90,18,305)">場を守る　←──────────→　場を変える</text>
+      <circle cx="750" cy="120" r="40" fill="#B4621A" opacity="0.1"/>
+      <circle cx="750" cy="120" r="28" fill="#B4621A" opacity="0.2"/>
+      <circle cx="750" cy="120" r="17" fill="#B4621A"/>
+      <text x="750" y="125" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">み◯</text>
+      <text x="750" y="174" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">み◯</text>
+      <text x="750" y="189" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">ENFP ｜ 天然酵母</text>
+      <circle cx="652" cy="180" r="40" fill="#6E4A92" opacity="0.1"/>
+      <circle cx="652" cy="180" r="28" fill="#6E4A92" opacity="0.2"/>
+      <circle cx="652" cy="180" r="17" fill="#6E4A92"/>
+      <text x="652" y="185" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">矢◯</text>
+      <text x="652" y="233" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">矢◯</text>
+      <text x="652" y="248" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">ENFP ｜ 青カビ</text>
+      <circle cx="590" cy="320" r="40" fill="#3F6A9E" opacity="0.1"/>
+      <circle cx="590" cy="320" r="28" fill="#3F6A9E" opacity="0.2"/>
+      <circle cx="590" cy="320" r="17" fill="#3F6A9E"/>
+      <text x="590" y="325" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">荒◯</text>
+      <text x="590" y="373" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">荒◯ ◯</text>
+      <text x="590" y="388" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">ENTJ ｜ 協会酵母</text>
+      <circle cx="490" cy="255" r="50" fill="#A8862A" opacity="0.1"/>
+      <circle cx="490" cy="255" r="36" fill="#A8862A" opacity="0.18"/>
+      <circle cx="490" cy="255" r="23" fill="#A8862A"/>
+      <text x="490" y="252" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">福◯</text>
+      <text x="490" y="265" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.85)" font-family="'Hiragino Sans',sans-serif">◯</text>
+      <text x="490" y="320" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">福◯</text>
+      <text x="490" y="335" text-anchor="middle" font-size="11" fill="#A8862A" font-weight="600" font-family="'Hiragino Sans',sans-serif">▲ 場に溶ける麹</text>
+      <circle cx="245" cy="200" r="40" fill="#98663F" opacity="0.1"/>
+      <circle cx="245" cy="200" r="28" fill="#98663F" opacity="0.2"/>
+      <circle cx="245" cy="200" r="17" fill="#98663F"/>
+      <text x="245" y="205" text-anchor="middle" font-size="8" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">さ◯</text>
+      <text x="245" y="253" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">さ◯</text>
+      <text x="245" y="268" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">INFP ｜ 天然酵母</text>
+      <circle cx="237" cy="378" r="40" fill="#4F7A43" opacity="0.1"/>
+      <circle cx="237" cy="378" r="28" fill="#4F7A43" opacity="0.2"/>
+      <circle cx="237" cy="378" r="17" fill="#4F7A43"/>
+      <text x="237" y="383" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">高◯</text>
+      <text x="237" y="431" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">高◯</text>
+      <text x="237" y="446" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">INFP ｜ 糠床</text>
+      <circle cx="175" cy="455" r="40" fill="#4F7A43" opacity="0.1"/>
+      <circle cx="175" cy="455" r="28" fill="#4F7A43" opacity="0.2"/>
+      <circle cx="175" cy="455" r="17" fill="#4F7A43"/>
+      <text x="175" y="460" text-anchor="middle" font-size="9" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">児◯</text>
+      <text x="175" y="508" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">児◯ 周</text>
+      <text x="175" y="523" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">INFP ｜ 糠床</text>
+      <circle cx="390" cy="460" r="40" fill="#817329" opacity="0.1"/>
+      <circle cx="390" cy="460" r="28" fill="#817329" opacity="0.2"/>
+      <circle cx="390" cy="460" r="17" fill="#817329"/>
+      <text x="390" y="465" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">り◯</text>
+      <text x="390" y="514" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">り◯</text>
+      <text x="390" y="529" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">INFP ｜ 納豆菌</text>
+      <circle cx="840" cy="190" r="40" fill="#B4621A" opacity="0.1"/>
+      <circle cx="840" cy="190" r="28" fill="#B4621A" opacity="0.2"/>
+      <circle cx="840" cy="190" r="17" fill="#B4621A"/>
+      <text x="840" y="196" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="'Hiragino Sans',sans-serif">関雄介</text>
+      <text x="840" y="244" text-anchor="middle" font-size="14" fill="#1A1A18" font-weight="700" font-family="'Hiragino Sans',sans-serif">関 雄介</text>
+      <text x="840" y="259" text-anchor="middle" font-size="11" fill="#6B6B60" font-family="'Hiragino Sans',sans-serif">ENFP ｜ 天然酵母</text>
+    </svg></div>
+<div class="axis"><p><b>横</b>静かな力から、動かす力へ。</p>
+<p><b>縦</b>場を守るから、場を変えるへ。</p>
+<p class="axs">2026年7月の森のカルテにある9名の配置です。</p></div>
+<h3 class="mincho"><span class="no">02</span>森のめぐり<span class="hint">この巡りの隙間を、り◯の糸が縫っていく</span></h3>
+<div class="flow"><div class="fl" style="--c:#B4621A"><b>点火</b><small>火を点ける</small><span>み◯</span></div><div class="arw">→</div><div class="fl" style="--c:#6E4A92"><b>拡散</b><small>独自ルートで場を広げる</small><span>矢◯</span></div><div class="arw">→</div><div class="fl" style="--c:#A8862A"><b>伝染</b><small>場に溶けてビジョンを伝染させる</small><span>福◯</span></div><div class="arw">→</div><div class="fl" style="--c:#4F7A43"><b>蓄積</b><small>深く蓄積して土壌を作る</small><span>高◯・児◯</span></div><div class="arw">→</div><div class="fl" style="--c:#3F6A9E"><b>設計</b><small>設計図で品質を守る</small><span>荒◯</span></div><div class="arw">→</div><div class="fl" style="--c:#98663F"><b>醸成</b><small>遠くに矢を放ちながら、包含で取り残しをなくす</small><span>さ◯</span></div></div>
+<div class="notes" style="margin-top:20px">
+  <div class="nt3" style="border-color:#817329"><b>全体を結ぶ糸 — り◯</b><p>やわらかい糸で人と人を結び直す。公平という同じ物差しを保ったまま、離れた者どうしをつなぐ菌糸になる。</p></div>
+  <div class="nt3" style="border-color:#B4621A"><b>飛び込んで、場を動かす — 関 雄介</b><p>場に飛び込みエネルギーを持ち込む。内側から場を動かす触媒。</p></div>
+</div>
+<p class="loop">役割は場面によって変わりうる、仮説的分類です。</p>
+<h3 class="mincho"><span class="no">03</span>チームを組むときの三つの問い</h3>
+<div class="checks">
+  <div class="ck"><b>意思決定のルールを、事前に決めているか</b><p>P型（探索型）が9人中7人。可能性を探り続けて決断が遅れやすい。意思決定のルールを事前に決めておくと動きが速くなる。</p></div>
+  <div class="ck"><b>設計・決断が、一人に集まっていないか</b><p>荒◯さんへの過集中を避ける。唯一のENTJとして設計・決断を一手に引き受けやすい。役割分散の設計を意識的に。</p></div>
+  <div class="ck"><b>「どこまで責任を持つか」の境界を、一緒に引けているか</b><p>さ◯さんの発想の射程が一番長い。発想は誰より遠くに飛ぶが引き受けすぎる。負荷分散が必要。</p></div>
+</div>
+<footer><span>森のカルテ ｜ きょうどこ？ラボ</span><span>1 / 3</span></footer>
+</section>
+<section class="forest-page">
+<h3 class="mincho" style="margin-top:0"><span class="no">04</span>任せ方の早見表<span class="hint">組むときは、1枚目の三つの問いと一緒に</span></h3>
+<p class="src" style="margin-bottom:18px">組み合わせは、元の森のカルテの関係図にある見立てです。</p>
+<div class="forest-table-scroll" tabindex="0" role="region" aria-label="任せ方の早見表（横にスクロールできます）"><table>
+<thead><tr><th scope="col">この人</th><th scope="col">任せると光る仕事</th><th scope="col">組むと気持ちいい相手</th><th scope="col">まわりができること</th></tr></thead>
+<tbody><tr style="--c:#B4621A"><td class="who"><b>み◯</b><span class="tag">点火</span><i>「火を点けて、そのまま消えないマッチ。」</i></td><td>言葉で場を起こし、最初の一歩を踏み出す。</td><td>荒◯さん（点火→構造化）・矢◯さん（ENFP共鳴）</td><td>発酵させる場を選ぶ意識が、長く活き続けるための条件になる。</td></tr>
+<tr style="--c:#6E4A92"><td class="who"><b>矢◯</b><span class="tag">拡散</span><i>「誰かの地図では冒険しない勇者（仲間も独特）」</i></td><td>誰の地図も使わない冒険者。独自ルートを行く。</td><td>さ◯さん（着想×学習欲）・み◯さん（ENFP共鳴）</td><td>根拠のプロセスを少し開いておくことが、信頼を早める鍵になる。</td></tr>
+<tr style="--c:#A8862A"><td class="who"><b>福◯</b><span class="tag">伝染</span><i>「場に溶けて、ビジョンを伝染させる新種の麹菌。」</i></td><td>ゴールを先に描き、場の温度に合わせて道筋を翻訳していく。</td><td>さ◯さん（発想→伝播）</td><td>「最初の一歩は自分から」と意識して踏み込む習慣が、麹としての射程を広げる。</td></tr>
+<tr style="--c:#4F7A43"><td class="who"><b>高◯</b><span class="tag">蓄積</span><i>「あんまりかき混ぜなくても、味が深いぬか床。」</i></td><td>語る前に集め、集めた密度がそのまま言葉の深さになる。</td><td>荒◯さん（設計→蓄積）・児◯さん（糠床同士）</td><td>完成を待たずに「今こういう状態です」と途中を開ける習慣が、場への貢献になる。</td></tr>
+<tr style="--c:#4F7A43"><td class="who"><b>児◯</b><span class="tag">蓄積</span><i>「結構塩分が効いているのに、みんなに愛される梅干し」</i></td><td>一人で深く考え抜いてから、それを確実に行動に変えていく。</td><td>高◯さん（糠床同士）</td><td>時々、ご自身の蓋を少しだけ開けて空気を逃し、途中の状態を周りに見せる習慣が、更に信頼を深める。</td></tr>
+<tr style="--c:#3F6A9E"><td class="who"><b>荒◯</b><span class="tag">設計</span><i>「入れると酒質がブレない、7号酵母。」</i></td><td>設計図を先に描いて生産する。品質の基準を保つ木。</td><td>み◯さん（点火→構造化）・高◯さん（設計→蓄積）</td><td>「なぜこの地図なのか」を言語化して渡す一手間が、信頼の基盤になる。</td></tr>
+<tr style="--c:#98663F"><td class="who"><b>さ◯</b><span class="tag">醸成</span><i>「誰よりも遠くに矢を放ち、後はニコニコ待つ弓師。」</i></td><td>学びながらアイデアが湧く、探索型の知性。多くの人の話を聞き、自分の中で静かに醸す。</td><td>福◯さん（発想→伝播）・矢◯さん（着想×学習欲）</td><td>「どこまで責任を持つか」の境界を一緒に引くことが優先。</td></tr>
+<tr style="--c:#817329"><td class="who"><b>り◯</b><span class="tag">結ぶ糸</span><i>「少しずつ、横糸を繋いでいく、揺るぎない縦糸。」</i></td><td>少しずつ、横糸を繋いでいく、揺るぎない縦糸。</td><td>福◯さん・矢◯さん（横糸を繋ぐ）</td><td>誰と誰をつないでいるかを本人と一緒に言葉にする。</td></tr>
+<tr style="--c:#B4621A"><td class="who"><b>関 雄介</b><span class="tag">介在</span><i>「飛び込んだ先で設計する天然酵母」</i></td><td>ゴールから逆算し、道筋を描きながら自らも走ろうとする。</td><td>荒◯さん（設計→介在）</td><td>ルーティン管理は仕組みか仲間に任せるのが持続の鍵。</td></tr></tbody>
+</table></div>
+<footer><span>森のカルテ ｜ きょうどこ？ラボ</span><span>2 / 3</span></footer>
+</section>
+<section class="forest-page">
+<h3 class="mincho" style="margin-top:0"><span class="no">05</span>この森の注意点<span class="hint">知っておくと、行き違いが減ること</span></h3>
+<div class="notes">
+  <div class="nt3"><b>P型（探索型）が9人中7人</b><p>高◯・矢◯・み◯・さ◯・児◯・関・り◯がP型。可能性を探り続けて決断が遅れやすい。意思決定のルールを事前に決めておくと動きが速くなる。</p></div>
+  <div class="nt3"><b>J型が荒◯・福◯の2人に集中</b><p>人数が増えても決断・完結させる力はこの2人のまま。依存がいっそう高まっている。どちらかが抜けるとプロジェクトが止まるリスクがある。</p></div>
+  <div class="nt3"><b>さ◯の拡散性（3.69）と責任感</b><p>発想は誰より遠くに飛ぶが引き受けすぎる。負荷分散が必要。「どこまで責任を持つか」の境界を一緒に引くことが優先。</p></div>
+  <div class="nt3"><b>高◯・児◯の「途中」を開く</b><p>蓄積型の2人は完成するまで見せない。「仕込み中を見せる」文化がチームの解像度を上げる。</p></div>
+  <div class="nt3"><b>荒◯さんへの過集中を避ける</b><p>唯一のENTJとして設計・決断を一手に引き受けやすい。役割分散の設計を意識的に。</p></div>
+  <div class="nt3"><b>り◯さんの糸を見えるようにする</b><p>誰と誰をつないでいるかを本人と一緒に言葉にすると、この森の関係網が「たまたま」でなく「設計」として見えてくる。</p></div>
+</div>
+<footer><span>森のカルテ ｜ きょうどこ？ラボ</span><span>カモシカのコンサル ｜ 3 / 3</span></footer>
+</section>
+</article></section>
+<p class="back"><a href="../index.html#team">← 研究所へ戻る</a></p></main></body></html>

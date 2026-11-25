@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>シフト可能日入力（見本）— カモシカ</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
+      background:#fff;
+      margin: 0; padding: 0; color: #333;
+    }
+    header {
+      background:#fff; color:#333;
+      padding: 16px 20px; text-align: center;
+    }
+    header h1 { margin: 0; font-size: 18px; letter-spacing:normal; }
+    header p  { margin: 4px 0 0; font-size: 12px; opacity: 0.8; }
+    .container { max-width: 480px; margin: 0 auto; padding: 16px; }
+    .card {
+      background:#fff; border-radius:0;
+      padding: 20px; margin-bottom: 16px;
+      box-shadow:none;
+    }
+    label.field-label {
+      display: block; font-size: 13px; font-weight: 700;
+      color: #333; margin-bottom: 8px;
+    }
+    select, input[type="time"] {
+      width: 100%; padding: 10px 12px;
+      font-size: 16px; border: 1px solid #ddd;
+      border-radius:0; background:#fff;
+      appearance: none; -webkit-appearance: none;
+    }
+    select:focus, input:focus {
+      outline: none; border-color: #333;
+      box-shadow:none;
+    }
+    .day-list { margin: 0; padding: 0; list-style: none; }
+    .day-row {
+      display: grid; grid-template-columns: 64px 1fr;
+      align-items: start; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid #333;
+    }
+    .day-row:last-child { border-bottom: none; }
+    .day-label { padding-top: 10px; font-size: 15px; font-weight: 700; color: #444; }
+    .day-label.sat { color: #333; }
+    .day-label .dow { font-size: 11px; font-weight: normal; }
+    .day-inputs { display: flex; flex-direction: column; gap: 8px; }
+    select.avail-sel { font-size: 15px; padding: 8px 12px; border-radius:0; }
+    select.avail-sel.is-no   { background:#fff; border-color: #333; color: #c00000; }
+    select.avail-sel.is-yes  { background:#fff; border-color: #333; color: #333; }
+    select.avail-sel.is-time { background:#fff; border-color: #333; color: #333; }
+    .time-range { display: none; align-items: center; gap: 8px; }
+    .time-range.visible { display: flex; }
+    .time-range input[type="time"] { flex: 1; font-size: 15px; padding: 8px 10px; }
+    .time-sep { font-size: 14px; color: #888; flex-shrink: 0; }
+    .hint { font-size: 11px; color: #888; margin-top: 4px; }
+    /* 入力のしかた */
+    .howto { border-top: 1px solid #333; }
+    .howto h2 { margin: 0 0 12px; font-size: 16px; color: #333; line-height: 1.5; }
+    .howto ul { list-style: none; margin: 0 0 14px; padding: 0; }
+    .howto li { display: flex; align-items: center; gap: 10px; font-size: 14px; padding: 5px 0; }
+    .mark {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius:0;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 15px;
+    }
+    .mark.yes  { background:#fff; color: #333; border: 1px solid #333; }
+    .mark.no   { background:#fff; color: #c00000; border: 1px solid #333; }
+    .mark.time { background:#fff; color: #333; border: 1px solid #333; font-size: 13px; }
+    .howto .note {
+      background:#fff; border-radius:0; padding: 10px 12px;
+      font-size: 13px; line-height: 1.7; color: #333;
+    }
+
+    /* 送信ボタン */
+    .btn-send {
+      width: 100%; padding: 16px;
+      background:#fff; color:#333;
+      border: none; border-radius:0;
+      font-size: 17px; font-weight: 700;
+      cursor: pointer; letter-spacing:normal;
+      transition: background 0.2s;
+    }
+    .btn-send:active { opacity: 0.85; }
+    .btn-send:disabled { background:#fff; cursor: not-allowed; }
+    .btn-send.sending { background:#fff; }
+
+    /* 送信結果 */
+    .send-result {
+      display: none; padding: 14px 16px;
+      border-radius:0; font-size: 14px;
+      line-height: 1.6; margin-top: 12px;
+    }
+    .send-result.success { background:#fff; color: #333; border: 1px solid #333; }
+    .send-result.error   { background:#fff; color: #c00000; border: 1px solid #333; }
+
+    /* 送信履歴 */
+    .history-section { display: none; }
+    .history-title { font-size: 13px; font-weight: 700; color: #333; margin-bottom: 10px; }
+    .history-item {
+      padding: 10px 12px; background:#fff;
+      border: 1px solid #eee; border-radius:0;
+      margin-bottom: 8px; font-size: 13px;
+    }
+    .history-item .hi-ts { color: #aaa; font-size: 11px; margin-bottom: 4px; }
+    .history-item .hi-summary { color: #444; line-height: 1.6; }
+    .hi-ok   { color: #333; font-weight: 700; }
+    .hi-no   { color: #c00000; font-weight: 700; }
+    .hi-time { color: #333; font-weight: 700; }
+
+    /* 未設定バナー */
+    .setup-banner {
+      background:#fff; border-left:0;
+      padding: 12px 14px; border-radius:0;
+      font-size: 13px; line-height: 1.6; margin-bottom: 16px;
+    }
+    .setup-msg {
+      text-align: center; color: #aaa; font-size: 14px; padding: 32px 0;
+    }
+  
+/* 白地と線で区切る。操作状態は文字・枠線で示す。 */
+button,input,select,textarea{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif}
+button,.btn,.btn-send{border:1px solid #333;color:#333;background:#fff}
+button:hover,.btn:hover,.btn-send:hover{border-color:#c00000}
+button.active,button.primary,.check[aria-pressed=true] .box{color:#c00000;font-weight:700;border-color:#c00000;background:#fff}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #c00000;outline-offset:3px}
+.panel,.card,.sheet{border:0;border-top:1px solid #ccc}
+.note{border:0;border-top:1px solid #ccc;padding:12px 0;background:#fff}
+.top,header{border-bottom:1px solid #ccc}
+tr.new td{color:#c00000;font-weight:700}
+.step.on,.item.done{border:1px solid #c00000}
+.seat.filled::after{content:"●";display:block;text-align:center;color:#c00000}
+.progress>div{background:#fff;border-top:1px solid #c00000}
+.caption{color:#333;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.good,.ok,.green{color:#333}.warn,.red{color:#c00000}
+
+p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;margin:10px 0 14px;padding:0;color:#FF831D;font:700 15px/1.8 "Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;letter-spacing:normal;text-align:left;opacity:1;white-space:normal;overflow-wrap:anywhere}
+p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
+p.gensen-empty{color:#999;font-weight:400}
+p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+</style>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"></head>
+<body><div class="top" style="background:#fff;color:#333;font-size:12px;padding:8px 16px;text-align:center;line-height:1.7">見本です（名前は架空・送信してもどこにも届きません）　<a href="../源泉と8つの種_デモ.html" style="color:#333;margin:0 8px;text-decoration:underline;white-space:nowrap" onclick="try { if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; } } catch (error) {}">← 戻る</a>　<a href="shift-flow.html" style="color:#333;margin:0 8px;text-decoration:underline;white-space:nowrap">入力のゆくえを見る →</a></div>
+
+<header>
+  <h1>シフト可能日入力</h1>
+  <p>発酵食堂カモシカ スタッフ用</p><p class="gensen-bridge" style="margin:0 0 14px;color:#333;font:400 14px/1.8 'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif">迅速なシフト構築が全員の暮らしを守る</p>
+</header>
+
+<div class="container">
+
+  <!-- GAS未設定の場合のバナー（設定後は非表示） -->
+  <div id="setup-banner" class="setup-banner" style="display:none">
+    ⚠️ まだ設定が完了していません。恵さんに連絡してください。
+  </div>
+
+  <!-- 入力のしかた -->
+  <div class="card howto">
+    <h2>勤務可能日・勤務可能時間を<br>入力してください</h2>
+    <ul>
+      <li><span class="mark yes">○</span>働ける日は ○</li>
+      <li><span class="mark no">×</span>働けない日は ×</li>
+      <li><span class="mark time">⏰</span>○の日は「働ける時間の幅」を入力</li>
+    </ul>
+    <div class="note">
+      ○は<b>勤務が確定する日ではありません</b>。<br>
+      勤務できる日は、<b>すべて○</b>にしてください。
+    </div>
+  </div>
+
+  <!-- ① 月選択 -->
+  <div class="card">
+    <label class="field-label">① 月を選ぶ</label>
+    <select id="month-sel" onchange="onSettingsChange()"></select>
+  </div>
+
+  <!-- ② 名前選択 -->
+  <div class="card">
+    <label class="field-label">② 名前を選ぶ</label>
+    <select id="staff-sel" onchange="onSettingsChange()">
+      <option value="">-- 選んでください --</option>
+      <option value="s1">はな</option>
+      <option value="s2">そら</option>
+      <option value="s3">つむぎ</option>
+      <option value="s4">こはる</option>
+      <option value="s5">いろは</option>
+      <option value="s6">すず</option>
+      <option value="s7">なぎ</option>
+    </select>
+  </div>
+
+  <!-- ③ 日付入力 -->
+  <div class="card">
+    <label class="field-label">③ 各日、働けるかどうかを入力してください</label>
+    <ul class="day-list" id="day-list">
+      <div class="setup-msg">月と名前を選ぶと表示されます</div>
+    </ul>
+  </div>
+
+  <!-- 送信ボタン -->
+  <div id="submit-area" style="display:none">
+    <button class="btn-send" id="send-btn" onclick="submitAvailability()">
+      送信する →
+    </button>
+    <div class="send-result" id="send-result"></div>
+  </div>
+
+  <!-- 過去の送信履歴 -->
+  <div class="card history-section" id="history-section">
+    <div class="history-title">過去の送信履歴（このスタッフ・この月）</div>
+    <div id="history-list"></div>
+  </div>
+
+</div>
+
+<script>
+'use strict';
+
+// 見本内の処理
+// 外部送信を行わない見本
+// 見本内の処理
+const GAS_URL = 'DEMO';
+// 見本内の処理
+
+const STAFF_MAP = {
+  s1:  { name: 'はな', maxEndHour: null },
+  s2: { name: 'そら', maxEndHour: 16 },
+  s3:  { name: 'つむぎ', maxEndHour: null },
+  s4:    { name: 'こはる',   maxEndHour: null },
+  s5:   { name: 'いろは',   maxEndHour: null },
+  s6:   { name: 'すず',     maxEndHour: 15 },
+  s7: { name: 'なぎ', maxEndHour: null },
+};
+const WORKING_DAYS = [2, 3, 4, 5, 6];
+const DAY_LABELS   = ['日', '月', '火', '水', '木', '金', '土'];
+
+// GAS未設定チェック
+if (GAS_URL === 'YOUR_GAS_URL_HERE') {
+  document.getElementById('setup-banner').style.display = 'block';
+}
+
+// 月セレクター初期化
+(function initMonthSel() {
+  const sel = document.getElementById('month-sel');
+  const now = new Date();
+  for (let i = 0; i < 3; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    const val = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+    const opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = `${d.getFullYear()}年${d.getMonth()+1}月`;
+    if (i === 1) opt.selected = true;
+    sel.appendChild(opt);
+  }
+})();
+
+function getWorkingDays(monthStr) {
+  const [y, m] = monthStr.split('-').map(Number);
+  const days = [];
+  const d = new Date(y, m - 1, 1);
+  while (d.getMonth() === m - 1) {
+    if (WORKING_DAYS.includes(d.getDay())) days.push(new Date(d));
+    d.setDate(d.getDate() + 1);
+  }
+  return days;
+}
+function formatDate(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// 見本内の処理
+// 月・名前が変わったら日付リストを再描画 + 履歴を取得
+// 見本内の処理
+function onSettingsChange() {
+  const staffId = document.getElementById('staff-sel').value;
+  const month   = document.getElementById('month-sel').value;
+  const submitArea = document.getElementById('submit-area');
+  const resultDiv  = document.getElementById('send-result');
+
+  resultDiv.style.display = 'none';
+  document.getElementById('history-section').style.display = 'none';
+
+  if (!staffId || !month) {
+    document.getElementById('day-list').innerHTML = '<div class="setup-msg">月と名前を選ぶと表示されます</div>';
+    submitArea.style.display = 'none';
+    return;
+  }
+
+  buildDayList(staffId, month);
+  submitArea.style.display = 'block';
+  loadHistory(staffId, month);
+}
+
+function buildDayList(staffId, month) {
+  const staff = STAFF_MAP[staffId];
+  const days  = getWorkingDays(month);
+  const list  = document.getElementById('day-list');
+  list.innerHTML = '';
+
+  days.forEach(d => {
+    const ds    = formatDate(d);
+    const dow   = d.getDay();
+    const isSat = dow === 6;
+
+    const li = document.createElement('li');
+    li.className = 'day-row';
+    li.dataset.date = ds;
+
+    const labelDiv = document.createElement('div');
+    labelDiv.className = `day-label${isSat ? ' sat' : ''}`;
+    labelDiv.innerHTML = `${d.getDate()}日<span class="dow">（${DAY_LABELS[dow]}）</span>`;
+
+    const inputsDiv = document.createElement('div');
+    inputsDiv.className = 'day-inputs';
+
+    const sel = document.createElement('select');
+    sel.className = 'avail-sel is-yes';
+    sel.dataset.date = ds;
+    sel.innerHTML = `
+      <option value="○">○ 働ける（何時でもOK）</option>
+      <option value="time">○ 働ける（時間の幅を入れる）</option>
+      <option value="×">× 働けない</option>
+    `;
+
+    const timeDiv = document.createElement('div');
+    timeDiv.className = 'time-range';
+
+    const startInput = document.createElement('input');
+    startInput.type = 'time';
+    startInput.value = '09:00';
+    startInput.dataset.role = 'start';
+
+    const sep = document.createElement('span');
+    sep.className = 'time-sep';
+    sep.textContent = '〜';
+
+    const endInput = document.createElement('input');
+    endInput.type = 'time';
+    endInput.dataset.role = 'end';
+    endInput.value = staff.maxEndHour
+      ? `${String(staff.maxEndHour).padStart(2,'0')}:00`
+      : '18:00';
+
+    timeDiv.appendChild(startInput);
+    timeDiv.appendChild(sep);
+    timeDiv.appendChild(endInput);
+
+    if (staffId === 's2') {
+      inputsDiv.insertAdjacentHTML('beforeend', '<div class="hint">※ そらさんは16時まで。「時間の幅を入れる」を選んで 9:00〜16:00 で送ってください</div>');
+    }
+
+    sel.addEventListener('change', () => {
+      sel.className = 'avail-sel';
+      if (sel.value === '×') sel.classList.add('is-no');
+      else if (sel.value === '○') sel.classList.add('is-yes');
+      else sel.classList.add('is-time');
+      timeDiv.classList.toggle('visible', sel.value === 'time');
+    });
+
+    inputsDiv.prepend(timeDiv);
+    inputsDiv.prepend(sel);
+    li.appendChild(labelDiv);
+    li.appendChild(inputsDiv);
+    list.appendChild(li);
+  });
+}
+
+// 見本内の処理
+// 送信
+// 見本内の処理
+function submitAvailability() {
+  const staffId   = document.getElementById('staff-sel').value;
+  const month     = document.getElementById('month-sel').value;
+  const staffName = STAFF_MAP[staffId]?.name || staffId;
+  const btn       = document.getElementById('send-btn');
+  const resultDiv = document.getElementById('send-result');
+
+  if (!staffId) { showResult('error','名前を選んでください'); return; }
+  if (GAS_URL === 'YOUR_GAS_URL_HERE') {
+    showResult('error', '⚠️ まだ設定が完了していません。恵さんに連絡してください。');
+    return;
+  }
+
+  // データ収集
+  const data = {};
+  document.querySelectorAll('.day-row').forEach(row => {
+    const ds  = row.dataset.date;
+    const sel = row.querySelector('select.avail-sel');
+    if (!sel) return;
+    if (sel.value === 'time') {
+      const startH = row.querySelector('input[data-role="start"]').value.split(':')[0].replace(/^0/, '') || '9';
+      const endH   = row.querySelector('input[data-role="end"]').value.split(':')[0].replace(/^0/, '')   || '18';
+      data[ds] = `${startH}-${endH}`;
+    } else {
+      data[ds] = sel.value;
+    }
+  });
+
+  const payload = { staff: staffId, staffName, month, data };
+
+  // 送信中
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  btn.classList.add('sending');
+
+  try { sessionStorage.setItem('shiftDemo', JSON.stringify(payload)); } catch(e) {}
+  location.href = 'shift-flow.html';
+}
+
+function showResult(type, msg) {
+  const div = document.getElementById('send-result');
+  div.className = `send-result ${type}`;
+  div.textContent = msg;
+  div.style.display = 'block';
+  div.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// 見本内の処理
+// この見本では外部の履歴を取得しない
+// 見本内の処理
+function loadHistory(staffId, month) { return; }
+
+function buildSummary(data) {
+  const ok   = Object.entries(data).filter(([,v]) => v === '○');
+  const ng   = Object.entries(data).filter(([,v]) => v === '×');
+  const time = Object.entries(data).filter(([,v]) => v !== '○' && v !== '×');
+
+  const parts = [];
+  if (ok.length)   parts.push(`<span class="hi-ok">○出勤可 ${ok.length}日</span>`);
+  if (ng.length)   parts.push(`<span class="hi-no">×不可 ${ng.length}日</span>`);
+  if (time.length) parts.push(`<span class="hi-time">時間制限 ${time.map(([d,v]) => `${d.slice(5)}(${v})`).join('・')}</span>`);
+  return parts.join('　') || '（データなし）';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"><title>仕組みの定期点検｜カモシカの見本</title><style>:root{--navy:#333;--sumi:#333;--soft:#666;--line:#ccc;--bg:#fff;--or:#c00000}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--sumi);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:14px;line-height:1.7}
+.top{background:#fff;color:#333;font-size:12px;padding:8px 16px;text-align:center}.top a{color:#333;margin:0 8px}
+main{max-width:1040px;margin:0 auto;padding:24px 16px 48px}h1{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:clamp(22px,3.4vw,30px);margin:4px 0}
+.lead{color:var(--soft);margin:0 0 18px}.label{font-size:12px;letter-spacing:normal;color:var(--navy)}
+.flow{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:10px;margin:8px 0 24px}
+.step{background:#fff;border:1px solid var(--navy);border-radius:0;padding:12px;position:relative}
+.step b{display:block;color:var(--navy);font-size:15px}.step small{color:var(--soft);font-size:12px;display:block}
+.step .who{display:inline-block;font-size:11px;background:#fff;color:var(--navy);border-radius:0;padding:1px 8px;margin-bottom:4px}
+.step.auto{background:#fff}.step.on{box-shadow:none}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:42%;color:var(--navy);font-weight:700;background:#fff}
+h2{font-size:15px;border-left:0;padding-left:8px;margin:26px 0 10px}
+.tbl{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:0}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:center;white-space:nowrap}
+th{background:#fff;color:var(--navy)}tr.new td{background:#fff}td.l{text-align:left}
+.note{font-size:12px;color:var(--soft)}.btn{background:#fff;color:#333;border:0;border-radius:0;padding:10px 16px;font-size:14px;cursor:pointer}
+.warn{color:#c00000;font-weight:700}.ok{color:#333;font-weight:700}
+form.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;background:#fff;border:1px solid var(--line);border-radius:0;padding:12px;align-items:end}
+form.mini label{font-size:12px;color:var(--soft)}form.mini input,form.mini select{width:100%;padding:6px;font-size:14px}
+@media(max-width:720px){.flow{grid-template-columns:1fr}.step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px}}
+
+a{color:var(--navy)}.sheet{background:#fff;border:1px solid var(--line);border-radius:0;padding:22px;margin:18px 0}.sheet>header{border-bottom:1px solid var(--navy);padding-bottom:10px;margin-bottom:16px}.sheet h2{margin-top:18px}.sheet p{margin:6px 0 12px}.tag{display:inline-block;border-radius:0;padding:2px 10px;font-weight:700;font-size:12px}.red{color:#c00000;background:#fff}.yellow{color:#333;background:#fff}.green{color:#333;background:#fff}.blue{color:#333;background:#fff}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.item{background:#fff;border:1px solid var(--line);border-radius:0;padding:15px}.item h2{margin:0 0 8px}.item p{margin:4px 0}.item.done{border:1px solid var(--or);background:#fff}.search{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.search input,.search select{font:inherit;padding:8px;border:1px solid var(--line);border-radius:0}.search input{width:min(100%,340px)}.empty td{height:44px;min-width:100px}.cross-table td,.cross-table th{white-space:normal;text-align:left;vertical-align:top;padding:16px}.cross-table th{width:30%}.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.memo{border:1px solid var(--line);border-radius:0;padding:12px}.memo b{color:var(--navy)}.sheet .red-line{border-color:#c00000}.sheet .yellow-line{border-color:#333}.sheet .blue-line{border-color:var(--navy)}
+@media(max-width:720px){.cols{grid-template-columns:1fr}.sheet{padding:16px}} 
+
+/* 白地と線で区切る。操作状態は文字・枠線で示す。 */
+button,input,select,textarea{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif}
+button,.btn,.btn-send{border:1px solid #333;color:#333;background:#fff}
+button:hover,.btn:hover,.btn-send:hover{border-color:#c00000}
+button.active,button.primary,.check[aria-pressed=true] .box{color:#c00000;font-weight:700;border-color:#c00000;background:#fff}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #c00000;outline-offset:3px}
+.panel,.card,.sheet{border:0;border-top:1px solid #ccc}
+.note{border:0;border-top:1px solid #ccc;padding:12px 0;background:#fff}
+.top,header{border-bottom:1px solid #ccc}
+tr.new td{color:#c00000;font-weight:700}
+.step.on,.item.done{border:1px solid #c00000}
+.seat.filled::after{content:"●";display:block;text-align:center;color:#c00000}
+.progress>div{background:#fff;border-top:1px solid #c00000}
+.caption{color:#333;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.good,.ok,.green{color:#333}.warn,.red{color:#c00000}
+
+p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;margin:10px 0 14px;padding:0;color:#FF831D;font:700 15px/1.8 "Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;letter-spacing:normal;text-align:left;opacity:1;white-space:normal;overflow-wrap:anywhere}
+p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
+p.gensen-empty{color:#999;font-weight:400}
+p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+</style></head>
+<body><div class="top">見本です（判定・数値・出来事はすべて架空） <a href="../源泉と8つの種_デモ.html" onclick="try { if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; } } catch (error) {}">← 戻る</a></div><main>
+<p class="label">07 リスク管理 ｜ 点検の流れ</p><h1>仕組みの定期点検</h1><p class="gensen-bridge" style="margin:0 0 14px;color:#333;font:400 14px/1.8 'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif">つくっておわりではないから</p><p class="lead">毎週月曜に機械が数え、赤のときだけ知らせる。</p>
+<div class="flow" style="--n:4"><div class="step auto"><b>毎週月曜に数える</b><small>機械が決まった項目を確認</small></div><div class="step auto"><b>札をつける</b><small>赤・黄・緑でレポートに並べる</small></div><div class="step auto"><b>赤のときだけ知らせる</b><small>黄・緑はレポートに残す</small></div><div class="step"><b>人が読んで決める</b><small>どこを直すか、いつ直すか</small></div></div><article class="sheet" aria-label="架空の定期点検レポート"><header><p class="label">今回：2026/11/23（月）／前回：2026/11/16（月）｜すべて架空の判定と数値</p><h2>仕組みの定期点検レポート</h2><p><span class="tag red">🔴 赤：人に知らせる</span> 赤1件・黄1件・緑2件</p></header><h2>① 仕組みが動いているか</h2><p><span class="tag green">🟢 緑：動いている</span></p><p>予約表の今週の件数は前回18件、今回21件です。未取込は前回0件、今回0件です。</p><h2>② 手順書と道具のズレ</h2><p><span class="tag red">🔴 赤：人に知らせる</span></p><p>発注帳の「発注済み」ボタンと手順書の表記の違いは、前回0か所、今回1か所です。</p><h2>③ 控えが新しいか</h2><p><span class="tag green">🟢 緑：新しい控えあり</span></p><p>予約表・発注帳の控えの最終日は、前回2026/11/15、今回2026/11/22です。</p><h2>④ AIの使いすぎ</h2><p><span class="tag yellow">🟡 黄：次に確認</span></p><p>日報の週次集計で、同じ資料の読み直しは前回1回、今回3回です。</p><p class="note">これは仕組みを説明する架空の一枚です。実際の点検結果や、現在の稼働状況は載せていません。</p></article>
+</main></body></html>

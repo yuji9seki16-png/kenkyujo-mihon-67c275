@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'"><title>日報から、全体会のペライチへ｜カモシカの見本</title><style>:root{--navy:#333;--sumi:#333;--soft:#666;--line:#ccc;--bg:#fff;--or:#c00000}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--sumi);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:14px;line-height:1.7}
+.top{background:#fff;color:#333;font-size:12px;padding:8px 16px;text-align:center}.top a{color:#333;margin:0 8px}
+main{max-width:1040px;margin:0 auto;padding:24px 16px 48px}h1{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:clamp(22px,3.4vw,30px);margin:4px 0}
+.lead{color:var(--soft);margin:0 0 18px}.label{font-size:12px;letter-spacing:normal;color:var(--navy)}
+.flow{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:10px;margin:8px 0 24px}
+.step{background:#fff;border:1px solid var(--navy);border-radius:0;padding:12px;position:relative}
+.step b{display:block;color:var(--navy);font-size:15px}.step small{color:var(--soft);font-size:12px;display:block}
+.step .who{display:inline-block;font-size:11px;background:#fff;color:var(--navy);border-radius:0;padding:1px 8px;margin-bottom:4px}
+.step.auto{background:#fff}.step.on{box-shadow:none}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:42%;color:var(--navy);font-weight:700;background:#fff}
+h2{font-size:15px;border-left:0;padding-left:8px;margin:26px 0 10px}
+.tbl{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:0}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:center;white-space:nowrap}
+th{background:#fff;color:var(--navy)}tr.new td{background:#fff}td.l{text-align:left}
+.note{font-size:12px;color:var(--soft)}.btn{background:#fff;color:#333;border:0;border-radius:0;padding:10px 16px;font-size:14px;cursor:pointer}
+.warn{color:#c00000;font-weight:700}.ok{color:#333;font-weight:700}
+form.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;background:#fff;border:1px solid var(--line);border-radius:0;padding:12px;align-items:end}
+form.mini label{font-size:12px;color:var(--soft)}form.mini input,form.mini select{width:100%;padding:6px;font-size:14px}
+@media(max-width:720px){.flow{grid-template-columns:1fr}.step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px}}
+
+a{color:var(--navy)}.sheet{background:#fff;border:1px solid var(--line);border-radius:0;padding:22px;margin:18px 0}.sheet>header{border-bottom:1px solid var(--navy);padding-bottom:10px;margin-bottom:16px}.sheet h2{margin-top:18px}.sheet p{margin:6px 0 12px}.tag{display:inline-block;border-radius:0;padding:2px 10px;font-weight:700;font-size:12px}.red{color:#c00000;background:#fff}.yellow{color:#333;background:#fff}.green{color:#333;background:#fff}.blue{color:#333;background:#fff}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.item{background:#fff;border:1px solid var(--line);border-radius:0;padding:15px}.item h2{margin:0 0 8px}.item p{margin:4px 0}.item.done{border:1px solid var(--or);background:#fff}.search{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.search input,.search select{font:inherit;padding:8px;border:1px solid var(--line);border-radius:0}.search input{width:min(100%,340px)}.empty td{height:44px;min-width:100px}.cross-table td,.cross-table th{white-space:normal;text-align:left;vertical-align:top;padding:16px}.cross-table th{width:30%}.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.memo{border:1px solid var(--line);border-radius:0;padding:12px}.memo b{color:var(--navy)}.sheet .red-line{border-color:#c00000}.sheet .yellow-line{border-color:#333}.sheet .blue-line{border-color:var(--navy)}
+@media(max-width:720px){.cols{grid-template-columns:1fr}.sheet{padding:16px}} 
+
+/* 白地と線で区切る。操作状態は文字・枠線で示す。 */
+button,input,select,textarea{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif}
+button,.btn,.btn-send{border:1px solid #333;color:#333;background:#fff}
+button:hover,.btn:hover,.btn-send:hover{border-color:#c00000}
+button.active,button.primary,.check[aria-pressed=true] .box{color:#c00000;font-weight:700;border-color:#c00000;background:#fff}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #c00000;outline-offset:3px}
+.panel,.card,.sheet{border:0;border-top:1px solid #ccc}
+.note{border:0;border-top:1px solid #ccc;padding:12px 0;background:#fff}
+.top,header{border-bottom:1px solid #ccc}
+tr.new td{color:#c00000;font-weight:700}
+.step.on,.item.done{border:1px solid #c00000}
+.seat.filled::after{content:"●";display:block;text-align:center;color:#c00000}
+.progress>div{background:#fff;border-top:1px solid #c00000}
+.caption{color:#333;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.good,.ok,.green{color:#333}.warn,.red{color:#c00000}
+
+p.gensen{display:flex;align-items:baseline;gap:8px;min-width:0;max-width:100%;margin:10px 0 14px;padding:0;color:#FF831D;font:700 15px/1.8 "Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;letter-spacing:normal;text-align:left;opacity:1;white-space:normal;overflow-wrap:anywhere}
+p.gensen .gensen-label{flex:0 0 auto;font-size:12px;font-weight:inherit;color:inherit}
+p.gensen-empty{color:#999;font-weight:400}
+p.gensen-empty .gensen-words{flex:0 1 auto;min-width:0;max-width:100%;box-sizing:border-box;border:1px dashed #ccc;padding:2px 8px;white-space:normal;overflow-wrap:anywhere}
+</style></head>
+<body><div class="top">見本です（部門名以外の出来事・担当は架空） <a href="../源泉と8つの種_デモ.html" onclick="try { if (document.referrer && new URL(document.referrer).origin === location.origin) { history.back(); return false; } } catch (error) {}">← 戻る</a></div><main>
+<p class="label">08 組織ラーニング ｜ 全体会の見本</p><h1>日報から、全体会のペライチへ</h1><p class="gensen-bridge" style="margin:0 0 14px;color:#333;font:400 14px/1.8 'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif">現場の一週間を、みんなで決める時間に変えるために。</p><p class="lead">記録を会議の前に並べ、金曜朝は人が決める時間に。</p>
+<div class="flow" style="--n:4"><div class="step"><b>スタッフの日報・課題台帳</b><small>食堂・ラボ・マルシェで残した記録</small></div><div class="step auto"><b>木曜朝に自動で集める</b><small>一週間の記録を材料にする</small></div><div class="step auto"><b>AIがA4ペライチに</b><small>🔴判断すること／🟡確認すること／🔵共有</small></div><div class="step"><b>金曜朝の全体会</b><small>人がゴール・担当・次の一手を決める</small></div></div><p class="note">以下は、流れと紙面の形を見せるための架空の一枚です。</p><article class="sheet" aria-label="全体会ペライチの架空見本"><header><p class="label">食堂 ｜ 11/27（金）の架空の記入例</p><h2>全体会ペライチ</h2><p>木曜朝に集めた日報から、片づけの順番を1件取り上げます。</p></header><h2>日報の一言</h2><div class="memo"><p>11/24（火）食堂日報：「皿を棚へ戻す人と、洗い場を拭く人がぶつかりました。片づけに18分かかりました。」</p></div><h2>今回の論点</h2><div class="memo"><p>11/27（金）は、皿を戻す人が通る間だけ、洗い場を拭く作業を待つかを決めます。昼の片づけで3日試し、接触と所要時間を日報に残す案です。</p></div><h2>前の週に試した結果</h2><div class="memo"><p>11/17〜20は「皿を全部戻してから拭く」を4日試しました。ぶつかる場面は0回でしたが、片づけは平均22分でした。「拭く人の待ち時間が長い」と日報にあり、今回は待つ時間を短くできるか話します。</p></div><h2>全体会で人が記入する</h2><div class="tbl"><table><thead><tr><th>決めたこと</th><th>担当</th><th>期限</th><th>台帳の更新</th></tr></thead><tbody><tr><td>会議で記入</td><td>会議で記入</td><td>会議で記入</td><td>会議後に確認</td></tr></tbody></table></div><p class="note">人名・出来事・担当は架空。実際の日報、売上、取引先、お客様の話は載せていません。</p></article><p>AIは記録を集めて論点の候補を並べるまで。決めるのは人。</p>
+</main></body></html>
